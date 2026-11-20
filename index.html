@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <title>Bloom Florist - Beranda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap">
+
+  <style>
+    body {
+      background-color: #fff5f8;
+      font-family: 'Poppins', sans-serif;
+      color: #4a353d;
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: #f3d5e0;
+      position: fixed;
+      height: 100%;
+      overflow: hidden;
+      box-shadow: 2px 0 10px rgba(139, 69, 96, 0.08);
+      z-index: 10;
+    }
+
+    .sidebar-brand {
+      color: #8b4560;
+      font-weight: 700;
+      padding: 24px 16px !important;
+      border-bottom: 1px solid rgba(139, 69, 96, 0.15);
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      color: #8b4560;
+      padding: 14px 20px !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #e8b5c8 !important;
+      color: #5e293d !important;
+      padding-left: 26px !important;
+    }
+
+    .sidebar::before {
+      content: "🌸";
+      position: absolute;
+      bottom: 95px;
+      left: 25px;
+      font-size: 40px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .sidebar::after {
+      content: "🌷 ✿ 🌸";
+      position: absolute;
+      bottom: 35px;
+      left: 25px;
+      font-size: 26px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .content {
+      margin-left: 240px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #c76b8b 0%, #b34d72 100%);
+      color: white;
+      padding: 60px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "🌸 ✿";
+      position: absolute;
+      left: 30px;
+      top: 20px;
+      font-size: 32px;
+      opacity: 0.35;
+    }
+
+    .header::after {
+      content: "🌷 🌸";
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
+      font-size: 32px;
+      opacity: 0.35;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .header h3 {
+      font-weight: 400;
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+
+    .main-card {
+      background: #ffffff;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(199, 107, 139, 0.12);
+    }
+
+    .hero-img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .hiasan {
+      color: #d88aa6;
+      font-size: 22px;
+      letter-spacing: 6px;
+      margin: 10px 0;
+    }
+
+    .btn-utama {
+      background-color: #c76b8b;
+      color: white;
+      padding: 12px 28px;
+      font-weight: 500;
+      margin-top: 15px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-utama:hover {
+      background-color: #a8486a !important;
+      color: white !important;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #f3d5e0;
+      color: #7a3b53;
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+      }
+
+      .sidebar::before,
+      .sidebar::after {
+        display: none;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        width: auto;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .main-card {
+        margin: 20px 16px;
+        padding: 25px 20px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="w3-sidebar w3-bar-block sidebar">
+    <h3 class="w3-bar-item sidebar-brand">🌸 Bloom Florist</h3>
+    <a href="index.html" class="w3-bar-item w3-button active">Beranda</a>
+    <a href="profil.html" class="w3-bar-item w3-button">Profil</a>
+    <a href="produk.html" class="w3-bar-item w3-button">Produk</a>
+    <a href="kontak.html" class="w3-bar-item w3-button">Kontak</a>
+  </nav>
+
+  <div class="content">
+
+    <header class="header">
+      <h1>WELCOME TO BLOOM FLORIST</h1>
+      <h3>Keindahan Bunga untuk Setiap Momen</h3>
+      <p>Bunga segar pilihan untuk orang-orang tersayang.</p>
+    </header>
+
+    <main class="w3-container">
+      <div class="main-card w3-center">
+        <p class="hiasan">✿ 🌸 ✿</p>
+
+        <img src="bloom.png" alt="Rangkaian Bunga Bloom Florist" class="hero-img">
+
+        <h2 style="color:#b34d72; margin-top: 20px;">
+          Selamat Datang di Bloom Florist
+        </h2>
+
+        <p style="max-width: 600px; margin: 12px auto; line-height: 1.7;">
+          Bloom Florist menyediakan berbagai macam bunga segar dan rangkaian bunga cantik
+          yang dirangkai sepenuh hati untuk menemani setiap momen spesial Anda.
+        </p>
+
+        <a href="produk.html" class="w3-button w3-round-large btn-utama">
+          Lihat Koleksi Produk
+        </a>
+
+        <p class="hiasan" style="margin-top: 25px;">🌷 ✿ 🌸</p>
+      </div>
+    </main>
+
+    <footer class="w3-center">
+      <p><strong>© 2026 Bloom Florist</strong></p>
+      <p>Beautiful Flowers for Beautiful Moments 🌸</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

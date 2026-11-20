@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <title>Bloom Florist - Profil</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap">
+
+  <style>
+    body {
+      background-color: #fff5f8;
+      font-family: 'Poppins', sans-serif;
+      color: #4a353d;
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: #f3d5e0;
+      position: fixed;
+      height: 100%;
+      overflow: hidden;
+      box-shadow: 2px 0 10px rgba(139, 69, 96, 0.08);
+      z-index: 10;
+    }
+
+    .sidebar-brand {
+      color: #8b4560;
+      font-weight: 700;
+      padding: 24px 16px !important;
+      border-bottom: 1px solid rgba(139, 69, 96, 0.15);
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      color: #8b4560;
+      padding: 14px 20px !important;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #e8b5c8 !important;
+      color: #5e293d !important;
+      padding-left: 26px !important;
+    }
+
+    .sidebar::before {
+      content: "🌸";
+      position: absolute;
+      bottom: 95px;
+      left: 25px;
+      font-size: 40px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .sidebar::after {
+      content: "🌷 ✿ 🌸";
+      position: absolute;
+      bottom: 35px;
+      left: 25px;
+      font-size: 26px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .content {
+      margin-left: 240px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #c76b8b 0%, #b34d72 100%);
+      color: white;
+      padding: 60px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "🌸 ✿";
+      position: absolute;
+      left: 30px;
+      top: 22px;
+      font-size: 32px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .header::after {
+      content: "🌷 🌸";
+      position: absolute;
+      right: 30px;
+      bottom: 22px;
+      font-size: 32px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .header h1,
+    .header h3,
+    .header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 2.3rem;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .main-card {
+      background-color: #ffffff;
+      max-width: 920px;
+      margin: 32px auto;
+      padding: 32px 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(199, 107, 139, 0.12);
+    }
+
+    .profil-img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .misi-list {
+      padding-left: 20px;
+      line-height: 1.8;
+      margin: 8px 0 0;
+    }
+
+    .benefit-box {
+      background-color: #fff5f8;
+      border: 1px solid #f0d6e0;
+      border-radius: 14px;
+      padding: 20px;
+      height: 100%;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .benefit-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(199, 107, 139, 0.12);
+    }
+
+    .benefit-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .benefit-box h4 {
+      color: #b34d72;
+      margin: 6px 0 8px;
+    }
+
+    .benefit-box p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+
+    footer {
+      background-color: #f3d5e0;
+      color: #7a3b53;
+      margin-top: auto;
+      padding: 18px;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+      }
+
+      .sidebar::before,
+      .sidebar::after {
+        display: none;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        width: auto;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .main-card {
+        margin: 20px 14px;
+        padding: 22px 16px;
+      }
+
+      .profil-img {
+        height: 240px;
+        margin-bottom: 16px;
+      }
+
+      .header h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="w3-sidebar w3-bar-block sidebar">
+    <h3 class="w3-bar-item sidebar-brand">🌸 Bloom Florist</h3>
+    <a href="index.html" class="w3-bar-item w3-button">Beranda</a>
+    <a href="profil.html" class="w3-bar-item w3-button active">Profil</a>
+    <a href="produk.html" class="w3-bar-item w3-button">Produk</a>
+    <a href="kontak.html" class="w3-bar-item w3-button">Kontak</a>
+  </nav>
+
+  <div class="content">
+
+    <header class="header">
+      <h1>PROFIL KAMI</h1>
+      <p>Mengenal lebih dekat Bloom Florist</p>
+    </header>
+
+    <main class="w3-container">
+      <section id="profil" class="main-card">
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d"
+              alt="Suasana toko dan rangkaian bunga Bloom Florist" class="profil-img">
+          </div>
+
+          <div class="w3-half">
+            <h3 style="color:#b34d72; margin-top: 0;">Tentang Kami</h3>
+            <p style="line-height: 1.7;">
+              Bloom Florist adalah sebuah usaha toko bunga yang
+              menyediakan berbagai jenis bunga segar dan rangkaian
+              bunga yang indah. Kami hadir untuk memberikan
+              kebahagiaan melalui keindahan bunga.
+            </p>
+
+            <h3 style="color:#b34d72">Visi</h3>
+            <p style="line-height: 1.7;">
+              Menjadi toko bunga terpercaya yang menyediakan
+              produk berkualitas dan pelayanan terbaik.
+            </p>
+
+            <h3 style="color:#b34d72">Misi</h3>
+            <ol class="misi-list">
+              <li>Menyediakan bunga segar dan berkualitas.</li>
+              <li>Memberikan pelayanan yang ramah.</li>
+              <li>Menghasilkan rangkaian bunga yang kreatif.</li>
+              <li>Memberikan kepuasan kepada pelanggan.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-card">
+        <div class="w3-center" style="margin-bottom: 24px;">
+          <h2 style="color:#b34d72; margin-top: 0; margin-bottom: 6px;">Kenapa Memilih Bloom Florist?</h2>
+          <p style="margin: 0;">Keunggulan dan nilai tambah untuk setiap pesanan bunga Anda.</p>
+        </div>
+
+        <div class="w3-row-padding">
+          <div class="w3-third w3-margin-bottom">
+            <div class="benefit-box w3-center">
+              <span class="benefit-icon">🌷</span>
+              <h4>Bunga Segar Terpilih</h4>
+              <p>Dipilih langsung setiap hari agar kelopak tetap segar, harum, dan tahan lebih lama.</p>
+            </div>
+          </div>
+
+          <div class="w3-third w3-margin-bottom">
+            <div class="benefit-box w3-center">
+              <span class="benefit-icon">🎀</span>
+              <h4>Rangkaian Estetik</h4>
+              <p>Dirangkai dengan rapi dan dapat disesuaikan dengan tema acara maupun pesan pribadi.</p>
+            </div>
+          </div>
+
+          <div class="w3-third w3-margin-bottom">
+            <div class="benefit-box w3-center">
+              <span class="benefit-icon">🚚</span>
+              <h4>Pengiriman Tepat Waktu</h4>
+              <p>Dikemas aman dan diantar tepat waktu agar kejutan untuk orang tersayang sampai sempurna.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="w3-center">
+      <p><strong>© 2026 Bloom Florist</strong></p>
+      <p>Beautiful Flowers for Beautiful Moments 🌸</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

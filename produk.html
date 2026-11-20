@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <title>Bloom Florist - Produk</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap">
+
+  <style>
+    body {
+      background-color: #fff5f8;
+      font-family: 'Poppins', sans-serif;
+      color: #4a353d;
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: #f3d5e0;
+      position: fixed;
+      height: 100%;
+      overflow: hidden;
+      box-shadow: 2px 0 10px rgba(139, 69, 96, 0.08);
+      z-index: 10;
+    }
+
+    .sidebar-brand {
+      color: #8b4560;
+      font-weight: 700;
+      padding: 24px 16px !important;
+      border-bottom: 1px solid rgba(139, 69, 96, 0.15);
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      color: #8b4560;
+      padding: 14px 20px !important;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #e8b5c8 !important;
+      color: #5e293d !important;
+      padding-left: 26px !important;
+    }
+
+    .sidebar::before {
+      content: "🌸";
+      position: absolute;
+      bottom: 95px;
+      left: 25px;
+      font-size: 40px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .sidebar::after {
+      content: "🌷 ✿ 🌸";
+      position: absolute;
+      bottom: 35px;
+      left: 25px;
+      font-size: 26px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .content {
+      margin-left: 240px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #c76b8b 0%, #b34d72 100%);
+      color: white;
+      padding: 60px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "🌸 ✿";
+      position: absolute;
+      left: 30px;
+      top: 22px;
+      font-size: 32px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .header::after {
+      content: "🌷 🌸";
+      position: absolute;
+      right: 30px;
+      bottom: 22px;
+      font-size: 32px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .header h1,
+    .header h3,
+    .header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 2.3rem;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .main-card {
+      background-color: #ffffff;
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 32px 26px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(199, 107, 139, 0.12);
+    }
+
+    .produk-card {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(199, 107, 139, 0.1);
+      transition: transform 0.25s ease;
+      height: 100%;
+    }
+
+    .produk-card:hover {
+      transform: translateY(-4px);
+    }
+
+    img.produk {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .harga {
+      color: #8b4560;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    footer {
+      background-color: #f3d5e0;
+      color: #7a3b53;
+      margin-top: auto;
+      padding: 18px;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+      }
+
+      .sidebar::before,
+      .sidebar::after {
+        display: none;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        width: auto;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .main-card {
+        margin: 20px 14px;
+        padding: 22px 16px;
+      }
+
+      .header h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="w3-sidebar w3-bar-block sidebar">
+    <h3 class="w3-bar-item sidebar-brand">🌸 Bloom Florist</h3>
+    <a href="index.html" class="w3-bar-item w3-button">Beranda</a>
+    <a href="profil.html" class="w3-bar-item w3-button">Profil</a>
+    <a href="produk.html" class="w3-bar-item w3-button active">Produk</a>
+    <a href="kontak.html" class="w3-bar-item w3-button">Kontak</a>
+  </nav>
+
+  <div class="content">
+
+    <header class="header">
+      <h1>KOLEKSI BUNGA PILIHAN</h1>
+      <p>Rangkaian bunga segar untuk hadiah dan momen spesial Anda.</p>
+    </header>
+
+    <main class="w3-container">
+      <section id="produk" class="main-card">
+        <div class="w3-row-padding">
+
+          <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-white produk-card">
+              <img class="produk" src="tulip.png" alt="Bunga Tulip">
+              <div class="w3-container w3-center w3-padding">
+                <h3 style="color:#b34d72">Bunga Tulip</h3>
+                <p>Bunga tulip cantik dan elegan.</p>
+                <h4 class="harga">Rp180.000</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-white produk-card">
+              <img class="produk" src="lily.png" alt="Buket Lily">
+              <div class="w3-container w3-center w3-padding">
+                <h3 style="color:#b34d72">Buket Lily</h3>
+                <p>Bunga lily untuk hadiah spesial.</p>
+                <h4 class="harga">Rp200.000</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-white produk-card">
+              <img class="produk" src="mawarpth.png" alt="Bunga Mawar Putih">
+              <div class="w3-container w3-center w3-padding">
+                <h3 style="color:#b34d72">Bunga Mawar Putih</h3>
+                <p>Bunga mawar putih cantik dan elegan.</p>
+                <h4 class="harga">Rp180.000</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-white produk-card">
+              <img class="produk" src="mthr.png" alt="Bunga Matahari">
+              <div class="w3-container w3-center w3-padding">
+                <h3 style="color:#b34d72">Bunga Matahari</h3>
+                <p>Bunga matahari cantik dan elegan.</p>
+                <h4 class="harga">Rp180.000</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-white produk-card">
+              <img class="produk" src="pinklily.png" alt="Bunga Lily Pink">
+              <div class="w3-container w3-center w3-padding">
+                <h3 style="color:#b34d72">Bunga Lily Pink</h3>
+                <p>Bunga lily pink cantik dan elegan.</p>
+                <h4 class="harga">Rp180.000</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-white produk-card">
+              <img class="produk" src="mawar.png" alt="Bunga Mawar Merah">
+              <div class="w3-container w3-center w3-padding">
+                <h3 style="color:#b34d72">Bunga Mawar</h3>
+                <p>Bunga Mawar cantik dan elegan.</p>
+                <h4 class="harga">Rp180.000</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="w3-center">
+      <p><strong>© 2026 Bloom Florist</strong></p>
+      <p>Beautiful Flowers for Beautiful Moments 🌸</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

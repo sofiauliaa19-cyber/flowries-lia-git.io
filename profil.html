@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 
@@ -5,11 +6,16 @@
   <title>Bloom Florist - Profil</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       background-color: #fff5f8;
       font-family: 'Poppins', sans-serif;
@@ -28,25 +34,27 @@
       width: 240px;
       background-color: #f3d5e0;
       position: fixed;
-      height: 100%;
-      overflow: hidden;
-      box-shadow: 2px 0 10px rgba(139, 69, 96, 0.08);
+      height: 100vh;
+      overflow-y: auto;
+      box-shadow: 3px 0 15px rgba(139, 69, 96, 0.08);
       z-index: 10;
     }
 
     .sidebar-brand {
       color: #8b4560;
       font-weight: 700;
-      padding: 24px 16px !important;
+      padding: 25px 16px !important;
       border-bottom: 1px solid rgba(139, 69, 96, 0.15);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .sidebar a {
       color: #8b4560;
       padding: 14px 20px !important;
       font-weight: 500;
-      transition: all 0.25s ease;
+      transition: 0.3s ease;
+      margin: 4px 10px;
+      border-radius: 8px;
     }
 
     .sidebar a:hover,
@@ -62,7 +70,7 @@
       bottom: 95px;
       left: 25px;
       font-size: 40px;
-      opacity: 0.5;
+      opacity: 0.4;
       pointer-events: none;
     }
 
@@ -72,7 +80,7 @@
       bottom: 35px;
       left: 25px;
       font-size: 26px;
-      opacity: 0.6;
+      opacity: 0.5;
       pointer-events: none;
     }
 
@@ -84,9 +92,9 @@
     }
 
     .header {
-      background: linear-gradient(135deg, #c76b8b 0%, #b34d72 100%);
+      background: linear-gradient(135deg, #c76b8b 0%, #a9486b 100%);
       color: white;
-      padding: 60px 24px;
+      padding: 65px 24px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -98,7 +106,7 @@
       left: 30px;
       top: 22px;
       font-size: 32px;
-      opacity: 0.35;
+      opacity: 0.3;
       pointer-events: none;
     }
 
@@ -108,99 +116,224 @@
       right: 30px;
       bottom: 22px;
       font-size: 32px;
-      opacity: 0.35;
+      opacity: 0.3;
       pointer-events: none;
     }
 
-    .header h1,
-    .header h3,
-    .header p {
+    .header h1 {
+      font-size: 40px;
+      margin: 0 0 12px;
       position: relative;
       z-index: 1;
     }
 
-    .header h1 {
-      font-size: 2.3rem;
-      margin-bottom: 8px;
+    .header p {
+      font-size: 14px;
+      margin: 0;
+      position: relative;
+      z-index: 1;
     }
 
-    .header p {
-      font-size: 1.05rem;
-      margin: 0;
+    main {
+      flex: 1;
+      width: 100%;
+      padding: 25px 20px;
     }
 
     .main-card {
       background-color: #ffffff;
-      max-width: 920px;
-      margin: 32px auto;
-      padding: 32px 28px;
+      max-width: 1100px;
+      width: 100%;
+      margin: 10px auto 30px;
+      padding: 32px;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(199, 107, 139, 0.10);
+    }
+
+    .profil-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .profil-img-box {
+      overflow: hidden;
       border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(199, 107, 139, 0.12);
+      box-shadow: 0 6px 20px rgba(199, 107, 139, 0.12);
     }
 
     .profil-img {
       width: 100%;
-      height: 360px;
+      height: 420px;
       object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .profil-img:hover {
+      transform: scale(1.03);
+    }
+
+    .profil-info {
+      padding: 5px;
+    }
+
+    .subjudul {
+      color: #b34d72;
+      font-size: 26px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .profil-info p {
+      font-size: 13px;
+      line-height: 1.9;
+      color: #705762;
+      margin-bottom: 18px;
+    }
+
+    .visi-box {
+      background: #fff5f8;
+      border-left: 4px solid #c76b8b;
+      border-radius: 12px;
+      padding: 15px 17px;
+      margin: 18px 0;
+    }
+
+    .visi-box h3 {
+      color: #b34d72;
+      font-size: 21px;
+      margin: 0 0 8px;
+    }
+
+    .visi-box p {
+      margin: 0;
     }
 
     .misi-list {
-      padding-left: 20px;
-      line-height: 1.8;
+      padding-left: 22px;
       margin: 8px 0 0;
+      line-height: 2;
+      color: #705762;
+      font-size: 13px;
+    }
+
+    .misi-list li {
+      padding-left: 4px;
+      margin-bottom: 4px;
+    }
+
+    .misi-list li::marker {
+      color: #c76b8b;
+    }
+
+    .benefit-heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .benefit-heading h2 {
+      color: #b34d72;
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    .benefit-heading p {
+      color: #80636e;
+      font-size: 13px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
     }
 
     .benefit-box {
-      background-color: #fff5f8;
+      background: #fff5f8;
       border: 1px solid #f0d6e0;
-      border-radius: 14px;
-      padding: 20px;
+      border-radius: 16px;
+      padding: 25px 18px;
+      text-align: center;
       height: 100%;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: 0.3s ease;
     }
 
     .benefit-box:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(199, 107, 139, 0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(199, 107, 139, 0.13);
+      background: #fffafd;
     }
 
     .benefit-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
+      font-size: 35px;
+      margin-bottom: 12px;
       display: block;
     }
 
     .benefit-box h4 {
       color: #b34d72;
-      margin: 6px 0 8px;
+      font-size: 21px;
+      margin: 8px 0 12px;
     }
 
     .benefit-box p {
       margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.6;
+      font-size: 12px;
+      color: #80636e;
+      line-height: 1.9;
     }
-
 
     footer {
       background-color: #f3d5e0;
       color: #7a3b53;
       margin-top: auto;
-      padding: 18px;
+      padding: 22px 15px;
+      text-align: center;
     }
 
     footer p {
-      margin: 4px 0;
+      margin: 5px 0;
+      font-size: 13px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
+      .sidebar {
+        width: 210px;
+      }
+
+      .content {
+        margin-left: 210px;
+      }
+
+      .main-card {
+        padding: 25px;
+      }
+
+      .profil-grid {
+        gap: 20px;
+      }
+
+      .profil-img {
+        height: 350px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
       .sidebar {
         width: 100%;
         height: auto;
         position: relative;
+        overflow: visible;
         text-align: center;
+        padding-bottom: 8px;
       }
 
       .sidebar::before,
@@ -208,27 +341,156 @@
         display: none;
       }
 
+      .sidebar-brand {
+        padding: 17px 10px !important;
+        margin-bottom: 5px;
+        font-size: 22px;
+      }
+
       .sidebar a {
         display: inline-block;
         width: auto;
+        margin: 3px;
+        padding: 10px 12px !important;
+        font-size: 12px;
+      }
+
+      .sidebar a:hover,
+      .sidebar a.active {
+        padding-left: 12px !important;
       }
 
       .content {
         margin-left: 0;
+        width: 100%;
       }
 
-      .main-card {
-        margin: 20px 14px;
-        padding: 22px 16px;
+      .header {
+        padding: 42px 15px;
       }
 
-      .profil-img {
-        height: 240px;
-        margin-bottom: 16px;
+      .header::before {
+        left: 10px;
+        top: 10px;
+        font-size: 23px;
+      }
+
+      .header::after {
+        right: 10px;
+        bottom: 10px;
+        font-size: 23px;
       }
 
       .header h1 {
-        font-size: 1.75rem;
+        font-size: 28px;
+      }
+
+      .header p {
+        font-size: 12px;
+        line-height: 1.8;
+      }
+
+      main {
+        padding: 12px 10px;
+      }
+
+      .main-card {
+        margin: 12px auto 20px;
+        padding: 17px 13px;
+        border-radius: 16px;
+      }
+
+      .profil-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .profil-img {
+        height: 260px;
+      }
+
+      .profil-info {
+        padding: 4px;
+      }
+
+      .subjudul {
+        font-size: 23px;
+      }
+
+      .profil-info p {
+        font-size: 12px;
+      }
+
+      .visi-box {
+        padding: 14px;
+      }
+
+      .visi-box h3 {
+        font-size: 20px;
+      }
+
+      .misi-list {
+        font-size: 12px;
+        line-height: 1.9;
+      }
+
+      .benefit-heading {
+        margin-bottom: 22px;
+      }
+
+      .benefit-heading h2 {
+        font-size: 24px;
+      }
+
+      .benefit-heading p {
+        font-size: 11px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .benefit-box {
+        padding: 22px 16px;
+      }
+
+      .benefit-icon {
+        font-size: 30px;
+      }
+
+      .benefit-box h4 {
+        font-size: 20px;
+      }
+
+      .benefit-box p {
+        font-size: 11px;
+      }
+
+      footer {
+        padding: 17px 10px;
+      }
+
+      footer p {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .main-card {
+        padding: 12px;
+      }
+
+      .profil-img {
+        height: 220px;
+      }
+
+      .benefit-box {
+        padding: 18px 12px;
       }
     }
   </style>
@@ -238,6 +500,7 @@
 
   <nav class="w3-sidebar w3-bar-block sidebar">
     <h3 class="w3-bar-item sidebar-brand">🌸 Bloom Florist</h3>
+
     <a href="index.html" class="w3-bar-item w3-button">Beranda</a>
     <a href="profil.html" class="w3-bar-item w3-button active">Profil</a>
     <a href="produk.html" class="w3-bar-item w3-button">Produk</a>
@@ -251,74 +514,90 @@
       <p>Mengenal lebih dekat Bloom Florist</p>
     </header>
 
-    <main class="w3-container">
+    <main>
+
       <section id="profil" class="main-card">
-        <div class="w3-row-padding">
-          <div class="w3-half">
+
+        <div class="profil-grid">
+
+          <div class="profil-img-box">
             <img src="floo.png" alt="Suasana toko dan rangkaian bunga Bloom Florist" class="profil-img">
           </div>
 
-          <div class="w3-half">
-            <h3 style="color:#b34d72; margin-top: 0;">Tentang Kami</h3>
-            <p style="line-height: 1.7;">
+          <div class="profil-info">
+
+            <h2 class="subjudul">Tentang Kami</h2>
+
+            <p>
               Bloom Florist adalah sebuah usaha toko bunga yang
               menyediakan berbagai jenis bunga segar dan rangkaian
               bunga yang indah. Kami hadir untuk memberikan
               kebahagiaan melalui keindahan bunga.
             </p>
 
-            <h3 style="color:#b34d72">Visi</h3>
-            <p style="line-height: 1.7;">
-              Menjadi toko bunga terpercaya yang menyediakan
-              produk berkualitas dan pelayanan terbaik.
-            </p>
+            <div class="visi-box">
+              <h3>🌷 Visi</h3>
+              <p>
+                Menjadi toko bunga terpercaya yang menyediakan
+                produk berkualitas dan pelayanan terbaik.
+              </p>
+            </div>
 
-            <h3 style="color:#b34d72">Misi</h3>
+            <h2 class="subjudul">Misi Kami</h2>
+
             <ol class="misi-list">
               <li>Menyediakan bunga segar dan berkualitas.</li>
               <li>Memberikan pelayanan yang ramah.</li>
               <li>Menghasilkan rangkaian bunga yang kreatif.</li>
               <li>Memberikan kepuasan kepada pelanggan.</li>
             </ol>
+
           </div>
         </div>
       </section>
 
       <section class="main-card">
-        <div class="w3-center" style="margin-bottom: 24px;">
-          <h2 style="color:#b34d72; margin-top: 0; margin-bottom: 6px;">Kenapa Memilih Bloom Florist?</h2>
-          <p style="margin: 0;">Keunggulan dan nilai tambah untuk setiap pesanan bunga Anda.</p>
+
+        <div class="benefit-heading">
+          <h2>Kenapa Memilih Bloom Florist?</h2>
+          <p>Keunggulan dan nilai tambah untuk setiap pesanan bunga Anda.</p>
         </div>
 
-        <div class="w3-row-padding">
-          <div class="w3-third w3-margin-bottom">
-            <div class="benefit-box w3-center">
-              <span class="benefit-icon">🌷</span>
-              <h4>Bunga Segar Terpilih</h4>
-              <p>Dipilih langsung setiap hari agar kelopak tetap segar, harum, dan tahan lebih lama.</p>
-            </div>
+        <div class="benefit-grid">
+
+          <div class="benefit-box">
+            <span class="benefit-icon">🌷</span>
+            <h4>Bunga Segar Terpilih</h4>
+            <p>
+              Dipilih langsung setiap hari agar kelopak tetap segar,
+              harum, dan tahan lebih lama.
+            </p>
           </div>
 
-          <div class="w3-third w3-margin-bottom">
-            <div class="benefit-box w3-center">
-              <span class="benefit-icon">🎀</span>
-              <h4>Rangkaian Estetik</h4>
-              <p>Dirangkai dengan rapi dan dapat disesuaikan dengan tema acara maupun pesan pribadi.</p>
-            </div>
+          <div class="benefit-box">
+            <span class="benefit-icon">🎀</span>
+            <h4>Rangkaian Estetik</h4>
+            <p>
+              Dirangkai dengan rapi dan dapat disesuaikan dengan
+              tema acara maupun pesan pribadi.
+            </p>
           </div>
 
-          <div class="w3-third w3-margin-bottom">
-            <div class="benefit-box w3-center">
-              <span class="benefit-icon">🚚</span>
-              <h4>Pengiriman Tepat Waktu</h4>
-              <p>Dikemas aman dan diantar tepat waktu agar kejutan untuk orang tersayang sampai sempurna.</p>
-            </div>
+          <div class="benefit-box">
+            <span class="benefit-icon">🚚</span>
+            <h4>Pengiriman Tepat Waktu</h4>
+            <p>
+              Dikemas aman dan diantar tepat waktu agar kejutan
+              untuk orang tersayang sampai sempurna.
+            </p>
           </div>
+
         </div>
       </section>
+
     </main>
 
-    <footer class="w3-center">
+    <footer>
       <p><strong>© 2026 Bloom Florist</strong></p>
       <p>Beautiful Flowers for Beautiful Moments 🌸</p>
     </footer>
@@ -328,3 +607,4 @@
 </body>
 
 </html>
+```
